@@ -1,12 +1,12 @@
 {
   "domain": "ariston_net",
   "name": "Ariston Net",
-  "codeowners": ["@your-github-username"],
+  "codeowners": ["@spotterandrea"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/your-org/ha-ariston-net",
+  "documentation": "https://github.com/spotterandrea/ha-ariston_net",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/your-org/ha-ariston-net/issues",
+  "issue_tracker": "https://github.com/spotterandrea/ha-ariston_net/issues",
   "loggers": ["ariston"],
   "requirements": ["ariston==0.19.9"],
   "version": "0.1.0"
