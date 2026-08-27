@@ -52,7 +52,7 @@ fare scraping dell'app ufficiale.
 ### Tramite HACS (consigliato)
 
 1. HACS → Integrazioni → menu (⋮) → **Repository personalizzate**.
-2. Aggiungi `https://github.com/your-org/ha-ariston-net` come categoria
+2. Aggiungi `https://github.com/spotterandrea/ha-ariston_net` come categoria
    *Integration*.
 3. Cerca "Ariston Net" in HACS e installa.
 4. Riavvia Home Assistant.
