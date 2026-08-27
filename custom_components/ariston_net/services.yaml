@@ -1,0 +1,17 @@
+set_holiday:
+  target:
+    entity:
+      domain: select
+      integration: ariston_net
+  fields:
+    end_date:
+      required: true
+      example: "2026-09-15"
+      selector:
+        date: {}
+
+cancel_holiday:
+  target:
+    entity:
+      domain: select
+      integration: ariston_net

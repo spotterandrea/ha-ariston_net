@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connetti Ariston Net",
+        "description": "Inserisci le credenziali dell'account che usi nell'app Ariston Net / Ariston.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ri-autentica Ariston Net",
+        "description": "Il cloud Ariston Net ha rifiutato le credenziali salvate per {username}. Inserisci la password attuale per continuare a usare questa integrazione.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile contattare il cloud Ariston Net. Controlla la connessione a internet e riprova.",
+      "invalid_auth": "Email o password non valide.",
+      "unknown": "Errore imprevisto. Controlla i log per maggiori dettagli."
+    },
+    "abort": {
+      "already_configured": "Questo account Ariston Net è già configurato.",
+      "reauth_successful": "Ri-autenticazione completata con successo."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Intervallo di aggiornamento (secondi)",
+          "energy_scan_interval": "Intervallo aggiornamento consumi energetici (secondi)",
+          "enabled_gateways": "Dispositivi da includere"
+        },
+        "data_description": {
+          "scan_interval": "Ogni quanto interrogare il cloud Ariston Net per lo stato principale. Mantienilo a 120 secondi o più per evitare errori HTTP 429 (troppe richieste).",
+          "energy_scan_interval": "I dati sui consumi energetici richiedono una chiamata più pesante: vengono aggiornati meno frequentemente dello stato principale.",
+          "enabled_gateways": "I dispositivi trovati su questo account ma non selezionati non creeranno alcuna entità."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "central_heating_total_energy": { "name": "Energia totale riscaldamento" },
+      "domestic_hot_water_total_energy": { "name": "Energia totale acqua calda sanitaria" },
+      "central_heating_gas": { "name": "Gas riscaldamento" },
+      "domestic_hot_water_gas": { "name": "Gas acqua calda sanitaria" },
+      "central_heating_electricity": { "name": "Elettricità riscaldamento" },
+      "domestic_hot_water_electricity": { "name": "Elettricità acqua calda sanitaria" },
+      "outside_temperature": { "name": "Temperatura esterna" },
+      "ch_flow_temperature": { "name": "Temperatura di mandata riscaldamento" },
+      "ch_flow_setpoint_temperature": { "name": "Temperatura di mandata impostata" },
+      "heating_circuit_pressure": { "name": "Pressione circuito di riscaldamento" },
+      "signal_strength": { "name": "Intensità segnale" },
+      "ch_return_temperature": { "name": "Temperatura di ritorno riscaldamento" },
+      "remaining_heating_time": { "name": "Tempo residuo di riscaldamento" },
+      "available_showers": { "name": "Docce disponibili" }
+    },
+    "binary_sensor": {
+      "offline_48h": { "name": "Offline da più di 48h" },
+      "flame": { "name": "Fiamma" },
+      "heating_pump": { "name": "Pompa di riscaldamento" },
+      "holiday_mode": { "name": "Modalità vacanza" },
+      "heating": { "name": "Riscaldamento" },
+      "anti_legionella_running": { "name": "Ciclo antilegionella in corso" }
+    },
+    "switch": {
+      "automatic_thermoregulation": { "name": "Termoregolazione automatica" },
+      "quiet_mode": { "name": "Modalità silenziosa" },
+      "anti_legionella": { "name": "Antilegionella" },
+      "eco_mode": { "name": "Modalità eco" },
+      "power_option": { "name": "Opzione potenza" },
+      "boost": { "name": "Boost" },
+      "permanent_boost": { "name": "Boost permanente" },
+      "anti_cooling": { "name": "Anti-raffreddamento" },
+      "night_mode": { "name": "Modalità notte" }
+    },
+    "select": {
+      "plant_mode": { "name": "Modalità impianto" },
+      "hybrid_mode": { "name": "Modalità ibrida" },
+      "buffer_control_mode": { "name": "Modalità controllo buffer" }
+    },
+    "water_heater": {
+      "water_heater": { "name": "Scaldacqua" }
+    }
+  },
+  "services": {
+    "set_holiday": {
+      "name": "Imposta modalità vacanza",
+      "description": "Attiva la modalità vacanza sull'impianto fino alla data di fine indicata.",
+      "fields": {
+        "end_date": {
+          "name": "Data di fine",
+          "description": "Data in cui la modalità vacanza terminerà automaticamente."
+        }
+      }
+    },
+    "cancel_holiday": {
+      "name": "Annulla modalità vacanza",
+      "description": "Disattiva la modalità vacanza sull'impianto, se attiva."
+    }
+  }
+}

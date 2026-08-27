@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Ariston Net",
+        "description": "Enter the credentials of the account you use in the Ariston Net / Ariston app.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Ariston Net",
+        "description": "The Ariston Net cloud rejected the stored credentials for {username}. Enter the current password to keep this integration working.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the Ariston Net cloud. Check your internet connection and try again.",
+      "invalid_auth": "Invalid email or password.",
+      "unknown": "Unexpected error. Check the logs for details."
+    },
+    "abort": {
+      "already_configured": "This Ariston Net account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Update interval (seconds)",
+          "energy_scan_interval": "Energy consumption update interval (seconds)",
+          "enabled_gateways": "Devices to include"
+        },
+        "data_description": {
+          "scan_interval": "How often to poll the Ariston Net cloud for the main status. Keep it at 120 seconds or higher to avoid HTTP 429 (too many requests) errors.",
+          "energy_scan_interval": "Energy consumption data is a heavier call: it is refreshed less often than the main status.",
+          "enabled_gateways": "Devices found on this account that are not selected will not create any entity."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "central_heating_total_energy": { "name": "Central heating total energy" },
+      "domestic_hot_water_total_energy": { "name": "Domestic hot water total energy" },
+      "central_heating_gas": { "name": "Central heating gas" },
+      "domestic_hot_water_gas": { "name": "Domestic hot water gas" },
+      "central_heating_electricity": { "name": "Central heating electricity" },
+      "domestic_hot_water_electricity": { "name": "Domestic hot water electricity" },
+      "outside_temperature": { "name": "Outside temperature" },
+      "ch_flow_temperature": { "name": "Central heating flow temperature" },
+      "ch_flow_setpoint_temperature": { "name": "Central heating flow setpoint temperature" },
+      "heating_circuit_pressure": { "name": "Heating circuit pressure" },
+      "signal_strength": { "name": "Signal strength" },
+      "ch_return_temperature": { "name": "Central heating return temperature" },
+      "remaining_heating_time": { "name": "Remaining heating time" },
+      "available_showers": { "name": "Available showers" }
+    },
+    "binary_sensor": {
+      "offline_48h": { "name": "Offline for more than 48h" },
+      "flame": { "name": "Flame" },
+      "heating_pump": { "name": "Heating pump" },
+      "holiday_mode": { "name": "Holiday mode" },
+      "heating": { "name": "Heating" },
+      "anti_legionella_running": { "name": "Anti-legionella cycle running" }
+    },
+    "switch": {
+      "automatic_thermoregulation": { "name": "Automatic thermoregulation" },
+      "quiet_mode": { "name": "Quiet mode" },
+      "anti_legionella": { "name": "Anti-legionella" },
+      "eco_mode": { "name": "Eco mode" },
+      "power_option": { "name": "Power option" },
+      "boost": { "name": "Boost" },
+      "permanent_boost": { "name": "Permanent boost" },
+      "anti_cooling": { "name": "Anti-cooling" },
+      "night_mode": { "name": "Night mode" }
+    },
+    "select": {
+      "plant_mode": { "name": "Plant mode" },
+      "hybrid_mode": { "name": "Hybrid mode" },
+      "buffer_control_mode": { "name": "Buffer control mode" }
+    },
+    "water_heater": {
+      "water_heater": { "name": "Water heater" }
+    }
+  },
+  "services": {
+    "set_holiday": {
+      "name": "Set holiday mode",
+      "description": "Enables holiday mode on the plant until the given end date.",
+      "fields": {
+        "end_date": {
+          "name": "End date",
+          "description": "Date on which holiday mode should automatically end."
+        }
+      }
+    },
+    "cancel_holiday": {
+      "name": "Cancel holiday mode",
+      "description": "Disables holiday mode on the plant, if active."
+    }
+  }
+}
