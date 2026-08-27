@@ -1,9 +1,9 @@
 # Ariston Net per Home Assistant
 
-[![hassfest](https://img.shields.io/github/actions/workflow/status/your-org/ha-ariston-net/validate.yaml?label=hassfest)](https://github.com/your-org/ha-ariston-net/actions)
+[![hassfest](https://img.shields.io/github/actions/workflow/status/spotterandrea/ha-ariston-net/validate.yaml?label=hassfest)](https://github.com/your-org/ha-ariston-net/actions)
 [![HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz)
-[![Release](https://img.shields.io/github/v/release/your-org/ha-ariston-net)](https://github.com/your-org/ha-ariston-net/releases)
-[![License](https://img.shields.io/github/license/your-org/ha-ariston-net)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/spotterandrea/ha-ariston-net)](https://github.com/spotterandrea/ha-ariston-net/releases)
+[![License](https://img.shields.io/github/license/spotterandrea/ha-ariston-net)](LICENSE)
 
 Integrazione custom per Home Assistant che collega caldaie, sistemi ibridi e
 scaldacqua **Ariston Net** (app "Ariston Net" / "Ariston") tramite le API
